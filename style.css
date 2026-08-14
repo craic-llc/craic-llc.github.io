@@ -1,0 +1,65 @@
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  color: #1f1f1f;
+  line-height: 1.6;
+  background: #ffffff;
+}
+h1 {
+  font-size: 1.6em;
+  border-bottom: 2px solid #4472C4;
+  padding-bottom: 8px;
+}
+h2 {
+  font-size: 1.15em;
+  margin-top: 1.8em;
+  color: #2f5496;
+}
+.meta {
+  color: #595959;
+  font-size: 0.9em;
+}
+a {
+  color: #4472C4;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.brand img {
+  height: 48px;
+  width: auto;
+}
+.cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.card {
+  flex: 1 1 220px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05em;
+  color: #2f5496;
+}
+.card p {
+  margin: 0;
+  font-size: 0.92em;
+  color: #444;
+}
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid #d9d9d9;
+  color: #595959;
+  font-size: 0.88em;
+}
