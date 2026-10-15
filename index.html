@@ -45,9 +45,13 @@
     <h3>Free</h3>
     <p>Every feature, for pivots up to 100 rows. No sign-up, no time limit.</p>
   </div>
-  <div class="card">
+  <div class="card card-pro">
     <h3>Pro &middot; $10 per user per year</h3>
-    <p>Removes the row limit for your full dataset. To buy, email <a href="mailto:dev@zebraanalytics.com?subject=PivotView%20Pro%20license">dev@zebraanalytics.com</a> with your name and number of users. We will send an invoice and your license key, which activates in seconds, fully offline, no account required.</p>
+    <p id="buy-pro-desc">Removes the row limit for your full dataset. Tell us your name and number of users and we will send an invoice and your license key. It activates in seconds, fully offline, no account required.</p>
+    <p class="buy-row">
+      <a class="btn btn-buy" id="buy-pro" href="mailto:dev@zebraanalytics.com?subject=PivotView%20Pro%20license" rel="noopener">Buy PivotView Pro</a>
+      <span class="buy-alt">Prefer an invoice or purchase order? <a href="mailto:dev@zebraanalytics.com?subject=PivotView%20Pro%20license">Email us</a>.</span>
+    </p>
   </div>
   <div class="card">
     <h3>Enterprise</h3>
@@ -60,6 +64,33 @@
 Main site: <a href="https://craic-llc.com/">https://craic-llc.com/</a></p>
 
 <footer>&copy; CRAiC LLC &middot; <a href="privacy.html">Privacy</a> &middot; <a href="eula.html">EULA</a></footer>
+
+<script>
+(function () {
+  // Hosted checkout for PivotView Pro (Lemon Squeezy, merchant of record).
+  // FLIP: paste the Pro variant's Buy link from the Lemon Squeezy dashboard, e.g.
+  //   "https://craic.lemonsqueezy.com/checkout/buy/00000000-0000-0000-0000-000000000000"
+  // While empty, the Buy button falls back to email (the behaviour shipped at launch).
+  var CHECKOUT_URL = "";
+
+  var btn = document.getElementById("buy-pro");
+  var desc = document.getElementById("buy-pro-desc");
+  if (!btn || !CHECKOUT_URL) return;
+
+  // quantity = number of users; embed=1 opens the checkout as an overlay on this page,
+  // and the plain link still works as a hosted checkout page if the script is blocked.
+  btn.href = CHECKOUT_URL + (CHECKOUT_URL.indexOf("?") < 0 ? "?" : "&") + "quantity=1&embed=1&logo=0";
+  btn.className += " lemonsqueezy-button";
+  if (desc) {
+    desc.textContent = "Removes the row limit for your full dataset. Choose your number of users and pay by card; we email your license key within one business day. It activates in seconds, fully offline, no account required.";
+  }
+
+  var s = document.createElement("script");
+  s.src = "https://app.lemonsqueezy.com/js/lemon.js";
+  s.defer = true;
+  document.head.appendChild(s);
+})();
+</script>
 
 </body>
 </html>

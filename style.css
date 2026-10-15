@@ -82,3 +82,16 @@ footer {
   color: #595959;
   font-size: 0.9em;
 }
+.buy-row {
+  margin-top: 12px !important;
+}
+.btn-buy {
+  padding: 8px 18px;
+  font-size: 0.95em;
+}
+.buy-alt {
+  display: block;
+  margin-top: 8px;
+  color: #595959;
+  font-size: 0.85em;
+}
